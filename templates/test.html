@@ -1,0 +1,205 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="yellow" style="position: relative;">
+    {% include 'navbar.html' %}
+    <div class="container">
+        <div class="my-row">
+            <div class="my-col-1">
+                <h2>Hello! I am Sage</h2>
+                <h3>Your personal twitter bot and online friend :)</h3>
+                <br />
+                <p>I can help you find out what people tweet about!<br />I was created as a fun project by
+                    <strong>@ackermanhisashi</strong> uWu
+                </p>
+                <a type="button" href="{{ url_for('analyse_tweets')}}" class="btn btn-secondary">Try me!</a>
+                <!-- <button type="button" class="btn btn-warning">Try me! >></button> -->
+            </div>
+            <div class="my-col-2">
+                <img src="{{ url_for('static', filename = 'img/sage2.png')}}" class="sagepic">
+            </div>
+        </div>
+    </div>
+    <br /><br />
+    <div class="custom-shape-divider-bottom-1656741160">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+                d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                class="shape-fill"></path>
+        </svg>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row text-center g-4 p-4">
+        <h3 style="color: #0d9693;">Find out what these accounts are talking about recently!</h3>
+        <br /><br /><br /><br /><br /><br /><br /><br />
+        <div class="col-md">
+            <div class="my-card-body">
+                <div class="imgBx">
+                    <img src="{{ url_for('static', filename = 'img/fab.jpg')}}">
+                </div>
+                <div class="content">
+                    <div class="details">
+                        <div class="tweets-data">
+                            <p>Recently, they mostly talk about</p>
+                            <p><span class="tweet-topics">Chelsea</span>
+                                <span class="tweet-topics">United</span><br />
+                                <span class="tweet-topics">Juventus</span>
+                                <span class="tweet-topics">Tottenham</span><br />
+                                <span class="tweet-topics">De Jong</span>
+                                <span class="tweet-topics">Ronaldo</span>
+                            </p>
+
+
+                        </div>
+                        <img src="{{ url_for('static', filename = 'img/twitter.png')}}" class="twtimg p-2">
+                        <h5 class="my-text2" style="color: #0d9693; ">@fabrizioromano</h5>
+                        <div class="data" style="display: flex; justify-content: space-evenly;">
+                            <h5 class="red" style="font-size: small;">20k<br /><span>Tweets</span></h5>
+                            <h5 class="red" style="font-size: small;">560k<br /><span>Followers</span></h5>
+                            <h5 class="red" style="font-size: small;">20k<br /><span>Following</span></h5><br />
+                        </div>
+                        <a type="button" href="{{ url_for('analyse_tweets')}}" class="btn btn-secondary">Try yourself!
+                            >></a>
+                        <!-- <button type="button" class="btn btn-warning">Try yourself! >></button> -->
+                    </div>
+
+                </div>
+            </div>
+
+        </div><br />
+        <div class="col-md">
+            <div class="my-card-body">
+                <div class="imgBx">
+                    <img src="{{ url_for('static', filename = 'img/cr7raprhymes.jpg')}}">
+                </div>
+                <div class="content">
+                    <div class="details">
+                        <div class="tweets-data">
+                            <p>Recently, they mostly talk about</p>
+                            <p><span class="tweet-topics">Ronaldo</span>
+                                <span class="tweet-topics">Messi</span><br />
+                                <span class="tweet-topics">Mbappe</span>
+                                <span class="tweet-topics">League</span><br />
+                                <span class="tweet-topics">United</span>
+                                <span class="tweet-topics">Madrid</span>
+                            </p>
+
+
+                        </div>
+                        <img src="{{ url_for('static', filename = 'img/twitter.png')}}" class="twtimg p-2">
+                        <h5 class="my-text2" style="color: #0d9693; ">@cr7raprhymes</h5>
+                        <div class="data" style="display: flex; justify-content: space-evenly;">
+                            <h5 class="red" style="font-size: small;">12k<br /><span>Tweets</span></h5>
+                            <h5 class="red" style="font-size: small;">55.6k<br /><span>Followers</span></h5>
+                            <h5 class="red" style="font-size: small;">607<br /><span>Following</span></h5><br />
+                        </div>
+                        <a type="button" href="{{ url_for('analyse_tweets')}}" class="btn btn-secondary">Try yourself!
+                            >></a>
+                        <!-- <button type="button" class="btn btn-warning">Try yourself! >></button> -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="my-card-body">
+                <div class="imgBx">
+                    <img src="{{ url_for('static', filename = 'img/peteroliva.jpg')}}">
+                </div>
+                <div class="content">
+                    <div class="details">
+                        <div class="tweets-data">
+                            <p>Recently, they mostly talk about</p>
+                            <p><span class="tweet-topics">Eren</span>
+                                <span class="tweet-topics">Mikasa</span><br />
+                                <span class="tweet-topics">Annie</span>
+                                <span class="tweet-topics">Isayama</span><br />
+                                <span class="tweet-topics">Titan</span>
+                                <span class="tweet-topics">AOT</span>
+                            </p>
+
+
+                        </div>
+                        <img src="{{ url_for('static', filename = 'img/twitter.png')}}" class="twtimg p-2">
+                        <h5 class="my-text2" style="color: #0d9693; ">@PeterOliva00</h5>
+                        <div class="data" style="display: flex; justify-content: space-evenly;">
+                            <h5 class="red" style="font-size: small;">70k<br /><span>Tweets</span></h5>
+                            <h5 class="red" style="font-size: small;">7874<br /><span>Followers</span></h5>
+                            <h5 class="red" style="font-size: small;">5008<br /><span>Following</span></h5><br />
+                        </div>
+                        <a type="button" href="{{ url_for('analyse_tweets')}}" class="btn btn-secondary">Try yourself!
+                            >></a>
+                        <!-- <button type="button" class="btn btn-warning">Try yourself! >></button> -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <center> <a type="button" href="{{ url_for('analyse_tweets')}}" class="btn btn-secondary">Try yourself!
+            >></a>
+        <!-- <button type="button" class="btn btn-warning">I wanna try! >></button> -->
+    </center>
+</div>
+<br /><br />
+<div class="yellow">
+
+    <div class="custom-shape-divider-top-1656815851">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                class="shape-fill" style="fill:#fff;"></path>
+        </svg>
+    </div>
+    <br /><br /><br />
+    <div class="container">
+
+        {% for message in get_flashed_messages() %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        {% endfor %}
+        <center>
+            <h3 style="color: #0d9693;">Love this tool?</h3>
+            <p>Get notified of the latest updates!</p>
+
+            <div class="container">
+                <br />
+                <form method="POST">
+                    {{ form.hidden_tag() }}
+                    <div class="form-width">
+                        {{ form.username(class='form-control', placeholder="Twitter Username") }}
+                        {{ form.email_id(class='form-control', placeholder="Email") }}
+                        {{ form.submit(class="btn btn-warning", style="background: #83d9d7;") }}
+                    </div>
+
+
+                    <br /><br /><br />
+                    <!-- <h3>Current users:</h3>
+                    <br />
+                    <table>
+                        {% for website_user in website_users %}
+                        <tr>
+                            <td>{{ website_user.id }}-{{website_user.name}}</a>-{{ website_user.email }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table> -->
+
+
+                </form>
+            </div>
+        </center>
+    </div>
+    <br /><br /><br /><br /><br />
+    {% include 'footer.html' %}
+
+</div>
+
+
+{% endblock %}

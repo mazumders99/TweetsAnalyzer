@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="yellow" style="position: relative;">
+    {% include 'navbar.html' %}
+    <br /><br /><br /><br /><br />
+    <div class="custom-shape-divider-bottom-1656741160">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+                d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                class="shape-fill"></path>
+        </svg>
+    </div>
+
+</div>
+
+<div class="container">
+    <ul>
+        <li>Sage chibi artwork by <a href="https://twitter.com/sephyrii">@sephyrii</a></li>
+        <li>Sage Home icon artwork by <a href="https://twitter.com/floaromaa">@floaromaa</a> </li>
+        <li>Sage background art by <a href="https://wall.alphacoders.com/big.php?i=1086711">ExCharny</a> </li>
+        <li>All twitter data being used is PUBLICLY available on the respective accounts. I'm using the <a
+                href="https://docs.tweepy.org/en/stable/api.html">Tweepy API</a> to get data from Twitter. </li>
+        <li>Bot pfp icon attributed to <a href="https://www.flaticon.com/free-icons/bot" title="bot icons">Bot icons
+                created by Smashicons - Flaticon</a> </li>
+        <li>Analysis icon attributed to <a href="https://www.flaticon.com/free-icons/statistics"
+                title="statistics icons">Statistics icons created by Freepik -
+                Flaticon</a> </li>
+        <li>Interaction icon attributed to <a href="https://www.flaticon.com/free-icons/marketing"
+                title="marketing icons">Marketing icons created by Freepik -
+                Flaticon</a> </li>
+        <li>Interaction2 icon attributed to <a href="https://www.flaticon.com/free-icons/interaction"
+                title="interaction icons">Interaction icons created by Freepik
+                - Flaticon</a> </li>
+        <li>Sentiments icon attributed to <a href="https://www.flaticon.com/free-icons/emotion"
+                title="emotion icons">Emotion icons created by Freepik -
+                Flaticon</a> </li>
+
+
+    </ul>
+</div>
+
+<br /><br /><br />
+<center>
+    <a type="button" href="{{ url_for('index')}}" class="btn btn-secondary">Home</a>
+</center>
+<br />
+
+<div class="yellow page-bottom">
+    <div class="custom-shape-divider-top-1656831452">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                class="shape-fill" style="fill:#fff;"></path>
+        </svg>
+    </div>
+    <br />
+    {% include 'footer.html' %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="yellow" style="position: relative;">
+    {% include 'navbar.html' %}
+    <br /><br />
+    <div class="container">
+        <h5 class="p-5 g-4" style="color: #0d9693;">This tool tells you what are the topics someone has been recently
+            talking about on Twitter
+            &#128558;</h5>
+    </div>
+
+    <br /><br /><br /><br /><br />
+    <div class="custom-shape-divider-bottom-1656741160">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+                d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                class="shape-fill"></path>
+        </svg>
+    </div>
+</div>
+<div class="container">
+    <p>These are my personal favorite accounts, and the tool works pretty well for these! Try by clicking on their
+        profile!</p>
+    <br />
+    <div class="container my-fav">
+        <div class="my-fav-div" style="margin: 5px;">
+            <center><a href="{{ url_for('analyse_tweets_for', username = 'fabrizioromano') }}" class="my-fav-link"><img
+                        src="{{ url_for('static', filename = 'img/fab.jpg')}}" width="100px" class="my-fav-img"><br />
+                    <i class="my-fav-name">@fabrizioromano</i></a></center>
+        </div>
+        <div class="my-fav-div" style="margin: 5px;">
+            <center><a href="{{ url_for('analyse_tweets_for', username = 'mikeluhg2') }}" class="my-fav-link"><img
+                        src="{{ url_for('static', filename = 'img/mikeluhg2.jpg')}}" width="100px"
+                        class="my-fav-img"><br />
+                    <i class="my-fav-name">@mikeluhg2</i></a></center>
+        </div>
+        <div class="my-fav-div" style="margin: 5px;">
+            <center><a href="{{ url_for('analyse_tweets_for', username = 'cr7raprhymes') }}" class="my-fav-link"><img
+                        src="{{ url_for('static', filename = 'img/cr7raprhymes.jpg')}}" width="100px"
+                        class="my-fav-img"><br />
+                    <i class="my-fav-name">@cr7raprhymes</i></a></center>
+        </div>
+        <div class="my-fav-div" style="margin: 5px;">
+            <center><a href="{{ url_for('analyse_tweets_for', username = 'PeterOliva00') }}" class="my-fav-link"><img
+                        src="{{ url_for('static', filename = 'img/peteroliva.jpg')}}" width="100px"
+                        class="my-fav-img"><br />
+                    <i class="my-fav-name">@PeterOliva00</i></a></center>
+        </div>
+        <div class="my-fav-div" style="margin: 5px;">
+            <center><a href="{{ url_for('analyse_tweets_for', username = 'PlayVALORANT') }}" class="my-fav-link"><img
+                        src="{{ url_for('static', filename = 'img/PlayVALORANT.jpg')}}" width="100px"
+                        class="my-fav-img"><br />
+                    <i class="my-fav-name">@PlayVALORANT</i></a></center>
+        </div>
+        <div class="my-fav-div" style="margin: 5px;">
+            <center><a href="{{ url_for('analyse_tweets_for', username = 'markgoldbridge') }}" class="my-fav-link"><img
+                        src="{{ url_for('static', filename = 'img/markgoldbridge.jpg')}}" width="100px"
+                        class="my-fav-img"><br />
+                    <i class="my-fav-name">@markgoldbridge</i></a></center>
+        </div>
+        <div class="my-fav-div" style="margin: 5px;">
+            <center><a href="{{ url_for('analyse_tweets_for', username = 'EremikaAOT') }}" class="my-fav-link"><img
+                        src="{{ url_for('static', filename = 'img/EremikaAOT.jpg')}}" width="100px"
+                        class="my-fav-img"><br />
+                    <i class="my-fav-name">@EremikaAOT</i></a></center>
+        </div>
+        <div class="my-fav-div" style="margin: 5px;">
+            <center><a href="{{ url_for('analyse_tweets_for', username = 'daimyoFPS') }}" class="my-fav-link"><img
+                        src="https://pbs.twimg.com/profile_images/1535525981783412736/WcEeR52E_400x400.jpg"
+                        width="100px" class="my-fav-img"><br />
+                    <i class="my-fav-name">@daimyoFPS</i></a></center>
+        </div>
+
+
+
+
+    </div>
+    <br />
+    <center>
+        <p>Or you can try with any account you want!</p>
+    </center><br />
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            How to use
+        </button>
+        <ul class="dropdown-menu">
+            <li><span class="dropdown-item-text">Simply enter the twitter username of the account</span></li>
+            <li><span class="dropdown-item-text">Then enter the number of tweets (max 200)</span></li>
+            <li><span class="dropdown-item-text">It will show you the
+                    six topics the account has been talking
+                    about the most, in the last 200 tweets!</span></li>
+        </ul>
+    </div>
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Requirements
+        </button>
+        <ul class="dropdown-menu">
+            <li><span class="dropdown-item-text">Works best when the account is public</span></li>
+            <li><span class="dropdown-item-text">If the account isn't public, then there maybe authorization issues and
+                    the tool might not work &#128557;</span></li>
+        </ul>
+    </div>
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Privacy policy and T&C
+        </button>
+        <ul class="dropdown-menu">
+            <li><span class="dropdown-item-text">For those interested, I'm using the Tweepy API to get user data.</span>
+            </li>
+            <li><span class="dropdown-item-text">I can only get the data which is <strong>public</strong> on a user's
+                    account. </span></li>
+            <li><span class="dropdown-item-text">You can read more about it <a href="">HERE</a>
+                </span></li>
+        </ul>
+    </div>
+</div>
+<br /><br /><br />
+
+<div class="container">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message | safe}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    {% endfor %}
+</div>
+
+
+<div class="container">
+    <form method="POST">
+        <div class="form-width">
+            {{ form.hidden_tag() }}
+            {{ form.username.label}}
+            {{ form.username(class='form-control', placeholder="ex fabrizioromano (don't type '@')") }}
+
+            {{ form.number_of_tweets.label}}
+            {{ form.number_of_tweets(class='form-control', placeholder="max 200") }}
+            <center>
+                {{ form.submit(class="btn btn-warning", style="background: #83d9d7; color: #fff") }}</center>
+        </div>
+    </form>
+</div>
+<br />
+<br />
+<br />
+<div class="container">
+    <a type="button" href="{{ url_for('index')}}" class="btn btn-secondary">Back</a>
+</div>
+
+<br />
+<div class="yellow">
+    <div class="custom-shape-divider-top-1656831452">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                class="shape-fill" style="fill:#fff;"></path>
+        </svg>
+    </div>
+    <br />
+    {% include 'footer.html' %}
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="yellow" style="position: relative;">
+    {% include 'navbar.html' %}
+    <br /><br /><br /><br /><br />
+    <div class="custom-shape-divider-bottom-1656741160">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+                d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                class="shape-fill"></path>
+        </svg>
+    </div>
+
+</div>
+
+
+<br /><br /><br />
+
+<div class="container">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    {% endfor %}
+</div>
+
+<div class="container">
+
+    {% if user_info_dict %}
+    <center>
+        <div class="user-card">
+            <img src="{{ user_info_dict['profile_img_url'] }}" class="user-card-img" width="200px">
+            <strong>
+                <p>{{ user_info_dict['name'] }}
+            </strong><br />
+
+            @<i>{{user_info_dict['screen_name']}}</i></p>
+
+            <div class="user-card-div">
+                <p class="user-card-content">{{user_info_dict['statuses_count']}}
+                    <br /><strong>Tweets</strong>
+                </p>
+                <p class="user-card-content">{{user_info_dict['followers_count']}}
+                    <br /><strong>Followers</strong>
+                </p>
+                <p class="user-card-content">{{user_info_dict['following_count']}}
+                    <br /><strong>Following</strong>
+                </p>
+            </div>
+
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+
+                <a class="user-card-links"
+                    href="{{ url_for('analyse_tweets_for', username = user_info_dict['screen_name']) }}">Analyse Tweets
+                    topics</a>
+                <a class="user-card-links"
+                    href="{{ url_for('add_user_as_favorite', username = user_info_dict['screen_name']) }}">Add as
+                    favorite</a>
+                <a class="user-card-links" href="{{ url_for('coming_soon') }}">Analyse tweets sentiment</a>
+
+            </div>
+        </div>
+
+    </center>
+
+    <a href="{{ url_for('add_user_as_favorite', username = user_info_dict['screen_name'])}}">View User</a>
+    {% endif %}
+</div>
+
+<div class="container">
+
+
+    <h3>Current favorites:</h3>
+    <br />
+
+
+    <button class="btn btn-secondary " type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false"
+        style="margin: 5px !important; border-radius: 20px;">
+        View your favorites
+    </button>
+    <ul class="dropdown-menu tweet-holder scroll-div" aria-labelledby="dropdownMenu2">
+        <center>Current favorites:</center>
+        {% for moot in moots %}
+        {% if current_user.id == moot.submitter.id %}
+        <li>
+
+            <span class="dropdown-item-text topic-tweet scroll-object"> <a href=""
+                    style="text-decoration: none; color: #0d9693;">@{{ moot.user_name }}</a> <a
+                    href="{{ url_for('remove_user_from_favorites', username = moot.user_name)}}"><img
+                        src="{{ url_for('static', filename = 'img/remove.png')}}" width="15px" align="right"></a></span>
+
+        </li>
+
+        {% endif %}
+        {% endfor %}
+
+
+
+        <!-- {{ tweet }}<br /><br /> -->
+        <!-- <hr> -->
+
+    </ul>
+
+
+
+</div>
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+<div class="yellow ">
+    <div class="custom-shape-divider-top-1656831452">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                class="shape-fill" style="fill:#fff;"></path>
+        </svg>
+    </div>
+    <br />
+    {% include 'footer.html' %}
+</div>
+
+{% endblock %}

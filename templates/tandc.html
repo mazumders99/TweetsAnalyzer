@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="yellow" style="position: relative;">
+    {% include 'navbar.html' %}
+    <br /><br /><br /><br /><br />
+    <div class="custom-shape-divider-bottom-1656741160">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+                d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                class="shape-fill"></path>
+        </svg>
+    </div>
+
+</div>
+
+<div class="container" style="font-size: small;">
+
+    Welcome to the website. If you continue to browse and use this website, you are agreeing to comply with and be bound
+    by
+    the following terms and conditions of use, which together with our privacy policy govern the
+    relationship
+    with you in relation to this website. If you disagree with any part of these terms and conditions, please do not use
+    our
+    website.
+    The term Pocket Sage or ‘us’ or ‘we’ refers to the owner of the website. The term ‘you’ refers to the
+    user or viewer of our website.
+    The use of this website is subject to the following terms of use:
+    <br /><br />
+    <ul>
+        <li>The content of the pages of this website is for your general information and use only. It is subject to
+            change
+            without
+            notice.
+            Do NOT use the website for any malicious purposes. It is ONLY for PERSONAL use.</li>
+        <li>Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness,
+            performance,
+            completeness or suitability of the information and materials found or offered on this website for any
+            particular
+            purpose. You acknowledge that such information and materials may contain inaccuracies or errors and we
+            expressly
+            exclude
+            liability for any such inaccuracies or errors to the fullest extent permitted by law.</li>
+        <li>Your use of any information or materials on this website is entirely at your own risk, for which we shall
+            not be
+            liable.</li>
+
+        <li>All trademarks reproduced in this website, which are not the property of, or licensed to the operator, are
+            acknowledged
+            on the website.</li>
+        <li>Unauthorised use of this website may give rise to a claim for damages and/or be a criminal offence.
+            From time to time, this website may also include links to other websites. These links are provided for your
+            convenience
+            to provide further information. They do not signify that we endorse the website(s). We have no
+            responsibility
+            for the
+            content of the linked website(s).</li>
+        <li>ALL privacy related issues are to be taken up with Tweepy, since I'm only using their API to get PUBLIC user
+            data.</li>
+        <li>Any disputes etc can be resolved by contacting me at ackermanhisashi@gmail.com.</li>
+    </ul>
+    <hr>
+
+</div>
+
+<br /><br />
+<center>
+    <a type="button" href="{{ url_for('index')}}" class="btn btn-secondary">Home</a>
+</center>
+<br /><br />
+
+<div class="yellow">
+    <div class="custom-shape-divider-top-1656831452">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                class="shape-fill" style="fill:#fff;"></path>
+        </svg>
+    </div>
+    <br />
+    {% include 'footer.html' %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="yellow" style="position: relative;">
+    {% include 'navbar.html' %}
+    <br /><br /><br /><br /><br />
+    <div class="custom-shape-divider-bottom-1656741160">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+                d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                class="shape-fill"></path>
+        </svg>
+    </div>
+
+</div>
+
+<div class="container">
+    <p style="font-size: small;">
+        This is only a personal project, and a very simple one at that. I'm often intrigued by seeing the tweets of my
+        moots, who are often so
+        passionate about certain topics. For the last year or so, I've seen so many of
+        my moots talk mostly about AOT, and I thought, how often do they tweet about this topic. Maybe I should build a
+        tool to try and find out. <br />
+        Accounts I love and follow, such as Cr7RapRhymes, is a Ronaldo fan account, but using the tool you'll see how
+        much rent free Messi lives in his head &#128518;
+        <br /><br />
+        <strong>How the tool works</strong>
+        <br />
+        First, the tool gets the tweets from the user's public timeline (only tweets, I decided not to include rts, qrts
+        and replies, for now) and breaks it down to individual words to search for
+        nouns, proper nouns etc, and then investigates the frequency of that particular topic word in all the tweets.
+        <br />
+        Then it finds out the six most frequently appearing topic words (I thought it works okayishly till six), and
+        uses Google charts to make a graph, cause why not.
+    </p>
+</div>
+
+<br /><br />
+<center>
+    <a type="button" href="{{ url_for('index')}}" class="btn btn-secondary">Home</a>
+</center>
+<br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+<div class="yellow">
+    <div class="custom-shape-divider-top-1656831452">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                class="shape-fill" style="fill:#fff;"></path>
+        </svg>
+    </div>
+    <br />
+    {% include 'footer.html' %}
+</div>
+
+{% endblock %}

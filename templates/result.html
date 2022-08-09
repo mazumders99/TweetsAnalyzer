@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="yellow" style="position: relative;">
+    {% include 'navbar.html' %}
+    <br /><br /><br /><br />
+    <div class="custom-shape-divider-bottom-1656741160">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+                d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                class="shape-fill"></path>
+        </svg>
+    </div>
+</div>
+<div class="container">
+    <h5>Results for <i>@{{username}}</i> for their last {{ number_of_tweets }} tweets</h5>
+    <br />
+    <img class="my-fav-img" src='{{ img_path }}' , width="100px">
+    <p>{{ x_coord }} - {{y_coord}}</p>
+
+    {% if data %}
+    <div class="chart">
+        {% include 'charts.html' %}
+    </div>
+
+    {% endif %}
+    <br /><br />
+
+    <!-- Tweet popup start -->
+    <div>
+        <center>
+            <p style="font-size: small;">Topics <i>@{{ username }}</i> tweets about the most, in the last {{
+                number_of_tweets
+                }} tweets<br />
+                Tap on the topic to see the tweets about it!</p>
+        </center>
+        {% if tweets_dict %}
+
+        {% for word in x_coord %}
+        {% if x_coord.index(word) != 0 %}
+
+        <button class="btn btn-secondary " type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
+            aria-expanded="false" style="margin: 5px !important; border-radius: 20px;">
+            {{word}} ({{y_coord[x_coord.index(word)]}})
+        </button>
+        <ul class="dropdown-menu tweet-holder scroll-div" aria-labelledby="dropdownMenu2">
+            {% for tweet in tweets_dict[word] %}
+            <li><span class="dropdown-item-text topic-tweet scroll-object">{{ tweet }}</span></li>
+            <!-- {{ tweet }}<br /><br /> -->
+            <!-- <hr> -->
+            {% endfor %}
+        </ul>
+
+        {% endif %}
+        {% endfor %}
+
+        {% endif %}
+    </div>
+
+    <br />
+
+    {% if not_well_classified %}
+
+    <p class="not-well-classified" style="font-size: small;">Normally, the tool works well with those account that tweet
+        more about some topics in
+        general, that are easy to
+        classify. <br />
+        For @{{ username }} the tweets are all over the place, so the tool is unable to figure out the main
+        topics very well &#128557;
+
+    </p>
+    {% endif %}
+
+    <br /><br /><br /><br />
+    <a type="button" href="{{ url_for('analyse_tweets')}}" class="btn btn-secondary">Back</a>
+    <!-- <button type="button" class="btn btn-warning">Try yourself! >></button> -->
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+</div>
+<div class="yellow footer-bottom">
+    <div class="custom-shape-divider-top-1656831452">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                class="shape-fill" style="fill:#fff;"></path>
+        </svg>
+    </div>
+    <br />
+    {% include 'footer.html' %}
+</div>
+{% endblock %}
